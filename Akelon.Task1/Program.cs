@@ -12,7 +12,7 @@
                 ["Юлина Юлия Юлиановна"] = new List<DateTime>(), ["Сидоров Сидор Сидорович"] = new List<DateTime>(),
                 ["Павлов Павел Павлович"] = new List<DateTime>(), ["Георгиев Георг Георгиевич"] = new List<DateTime>()
             };
-            var aviableWorkingDaysOfWeekWithoutWeekends = new List<string>() { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
+            var availableWorkingDaysOfWeekWithoutWeekends = new List<string>() { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
             
             foreach (var vacationList in vacationDictionary)
             {
@@ -26,7 +26,7 @@
                     int range = (endOfYear - startOfYear).Days;
                     var startDate = startOfYear.AddDays(gen.Next(range));
                     DateTime endDate;
-                    if (aviableWorkingDaysOfWeekWithoutWeekends.Contains(startDate.DayOfWeek.ToString()))
+                    if (availableWorkingDaysOfWeekWithoutWeekends.Contains(startDate.DayOfWeek.ToString()))
                     {
                         int vacIndex = gen.Next(_vacationSteps.Length);
                         int countOfVacationDays = _vacationSteps[vacIndex];
