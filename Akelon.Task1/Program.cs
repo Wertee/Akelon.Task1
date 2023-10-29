@@ -3,7 +3,7 @@
     class Program
     {
         private const int CountOfVacationDays = 28;
-        private static int[] _vacationSteps = { 7, 14 };
+        private static readonly int[] VacationSteps = { 7, 14 };
         static void Main(string[] args)
         {
             var vacationDictionary = new Dictionary<string, List<DateTime>>()
@@ -28,8 +28,8 @@
                     DateTime endDate;
                     if (availableWorkingDaysOfWeekWithoutWeekends.Contains(startDate.DayOfWeek.ToString()))
                     {
-                        int vacIndex = gen.Next(_vacationSteps.Length);
-                        int countOfVacationDays = _vacationSteps[vacIndex];
+                        int vacIndex = gen.Next(VacationSteps.Length);
+                        int countOfVacationDays = VacationSteps[vacIndex];
                         if (countOfVacationDays > vacationCount)
                             countOfVacationDays = vacationCount;
                         
