@@ -41,9 +41,8 @@
                         if (!vacationList.Value.Any(element => element >= startDate && element <= endDate))
                         {
                             if (!vacationDictionary.SelectMany(x => x.Value).ToList().Any(element => element.AddDays(3) >= startDate && element.AddDays(3) <= endDate)) {
-                                var existStart = vacationList.Value.Any(element => element.AddMonths(1) >= startDate && element.AddMonths(-1) <= endDate);
-                                var existEnd = vacationList.Value.Any(element => element.AddMonths(-1) <= endDate && element.AddMonths(1) >= startDate);
-                                if (!existStart || !existEnd)
+                                var existVacation = vacationList.Value.Any(element => element.AddMonths(1) >= startDate && element.AddMonths(-1) <= endDate);
+                                if (!existVacation)
                                     canCreateVacation = true; }
                         }
 
